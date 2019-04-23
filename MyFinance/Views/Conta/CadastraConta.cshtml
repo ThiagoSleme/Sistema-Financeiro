@@ -1,0 +1,25 @@
+﻿@model ContaModel
+@{
+    ViewData["Title"] = "CadastraConta";
+}
+
+<h2>Cadastra Conta</h2>
+
+<form asp-controller="Conta" asp-action="CadastraConta">
+    <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" class="form-control" asp-for="Nome" required>
+    </div>
+    <div class="form-group">
+        <label for="valor">Valor:</label>
+        <input type="text" class="form-control" asp-for="Saldo" required>
+    </div>
+    <button type="submit" class="btn btn-success">Salvar</button>
+    <button type="button" class="btn btn-primary" onclick="VoltarButton()">Voltar</button>
+</form>
+<script>
+    function VoltarButton()
+    {
+        window.location.href = "../Conta/MinhaConta";
+    }
+</script>
