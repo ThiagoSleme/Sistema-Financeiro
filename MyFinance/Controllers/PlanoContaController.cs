@@ -40,6 +40,11 @@ namespace MyFinance.Controllers
                 return RedirectToAction("NovoPlanoCont");
             }
             return View();
-        }        
+        } 
+        
+        public IActionResult CadPlanConta()
+        {
+            return View();
+        }
     }
 }

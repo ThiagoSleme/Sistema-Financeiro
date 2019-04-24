@@ -32,7 +32,8 @@ namespace MyFinance.Controllers
         {
             //VALIDAR SE OS DADOS DO FORMULARIO ESTA TODO PREENCHIDO
             if (ModelState.IsValid)
-            {                
+            {
+                novaConta.HttpContextAccessor = HttpContextAccessor;
                 novaConta.InsertNovaConta();
                 return RedirectToAction("MinhaConta");
             }
