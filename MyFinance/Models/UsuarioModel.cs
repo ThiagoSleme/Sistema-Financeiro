@@ -24,7 +24,7 @@ namespace MyFinance.Models
         //METODO PARA VERIFICAR SE EXISTE O USUARIO NO BANCO DE DADOS
         public bool ValidarLogin()
         {
-            string sql = $"SELECT ID, NOME, DATA_NASCIMENTO FROM USUARIO WHERE EMAIL='{Email}' AND SENHA='{Senha}'";
+            string sql = $"SELECT ID, NOME, DATA_NASCIMENTO FROM USUARIO WHERE EMAIL='{Email}' AND SENHA='{Senha}'";           
             DAL objDAL = new DAL();
             DataTable dt = objDAL.RetDataTtable(sql);
 

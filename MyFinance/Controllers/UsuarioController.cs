@@ -9,7 +9,7 @@ using MyFinance.Models;
 namespace MyFinance.Controllers
 {
     public class UsuarioController : Controller
-    {        
+    {
         //METODO PARA VALIDAR LOGIN VIA POST
         [HttpPost]
         public IActionResult ValidarLogin(UsuarioModel usuario)
@@ -20,7 +20,7 @@ namespace MyFinance.Controllers
                 HttpContext.Session.SetString("NomeUsuarioLogado", usuario.Nome);
                 HttpContext.Session.SetString("IdUsuarioLogado", usuario.Id.ToString());
 
-                return RedirectToAction("Menu_Inicial","Home");
+                return RedirectToAction("Menu_Inicial", "Home");
             }
             else
             {
@@ -38,7 +38,7 @@ namespace MyFinance.Controllers
                 if (id == 0)
                 {
                     HttpContext.Session.SetString("NomeUsuarioLogado", string.Empty);
-                    HttpContext.Session.SetString("IdUsuarioLogado", string.Empty);
+                    HttpContext.Session.SetString("IdUsuarioLogado", string.Empty);                    
                 }
             }
             return View();
@@ -50,7 +50,7 @@ namespace MyFinance.Controllers
         }
 
         //METODO PARA CADASTRAR USUARIO VIA POST
-        [HttpPost]        
+        [HttpPost]
         public IActionResult CadastrarUsuario(UsuarioModel usuario)
         {
             //VALIDAR TODOS OS CAMPOS ANTES DE GRAVAR NO BANCO
@@ -66,6 +66,6 @@ namespace MyFinance.Controllers
         public IActionResult Cadastro_Sucesso()
         {
             return View();
-        }
+        }              
     }
 }
