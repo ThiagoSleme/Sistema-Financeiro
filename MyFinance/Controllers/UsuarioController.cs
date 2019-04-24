@@ -9,22 +9,7 @@ using MyFinance.Models;
 namespace MyFinance.Controllers
 {
     public class UsuarioController : Controller
-    {
-        [HttpGet]
-        public IActionResult Login(int? id)
-        {
-            //QUEBAR A SESSAO DO USUARIO LOGADO
-            if (id !=null)
-            {
-                if (id == 0)
-                {
-                    HttpContext.Session.SetString("NomeUsuarioLogado", string.Empty);
-                    HttpContext.Session.SetString("IdUsuarioLogado", string.Empty);
-                }
-            }
-            return View();
-        }
-
+    {        
         //METODO PARA VALIDAR LOGIN VIA POST
         [HttpPost]
         public IActionResult ValidarLogin(UsuarioModel usuario)
@@ -42,6 +27,21 @@ namespace MyFinance.Controllers
                 TempData["MenssagemLoginInvalido"] = "Dados de acesso inválidos!!";
                 return RedirectToAction("Login");
             }
+        }
+
+        [HttpGet]
+        public IActionResult Login(int? id)
+        {
+            //QUEBAR A SESSAO DO USUARIO LOGADO
+            if (id != null)
+            {
+                if (id == 0)
+                {
+                    HttpContext.Session.SetString("NomeUsuarioLogado", string.Empty);
+                    HttpContext.Session.SetString("IdUsuarioLogado", string.Empty);
+                }
+            }
+            return View();
         }
 
         public IActionResult Cadastrar()

@@ -1,26 +1,34 @@
 ﻿@model UsuarioModel
+@{ Layout = "../Shared/_Layout_Login.cshtml";}
 @{
     ViewData["Title"] = "Cadastrar";
 }
+<div class="container " style="background-color:rgba(239, 239, 239, 0.95); border-radius:10px; width:500px; padding:20px;">
+    <h2>Cadastrar novo usuário</h2>
 
-<h2>Cadastrar novo usuário</h2>
-
-<form asp-controller="Usuario" asp-action="CadastrarUsuario">
-    <div class="form-group">
-        <label for="nome">Nome:</label>
-        <input type="text" class="form-control" asp-for="Nome" required>
-    </div>
-    <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" class="form-control" asp-for="Email" required>
-    </div>
-    <div class="form-group">
-        <label for="pwd">Senha:</label>
-        <input type="password" class="form-control" asp-for="Senha" required>
-    </div>
-    <div class="form-group">
-        <label for="date">Data Nascimento:</label>
-        <input type="date" class="form-control" asp-for="Data_Nascimento" required>
-    </div>
-    <button type="submit" class="btn btn-block btn-success">Salvar dados</button>
-</form>
+    <form asp-controller="Usuario" asp-action="CadastrarUsuario">
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" class="form-control" asp-for="Nome" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" asp-for="Email" required>
+        </div>
+        <div class="form-group">
+            <label for="pwd">Senha:</label>
+            <input type="password" class="form-control" asp-for="Senha" required>
+        </div>
+        <div class="form-group">
+            <label for="date">Data Nascimento:</label>
+            <input type="date" class="form-control" asp-for="Data_Nascimento" required>
+        </div>
+        <button type="submit" class="btn btn-block btn-success">Salvar dados</button>
+        <button type="button" class="btn btn-block btn-primary" onclick="EfetuarLogin()">Efetuar Login</button>
+    </form>
+</div>
+<script>
+    function EfetuarLogin() {
+        window.location.href = '../Usuario/Login';
+    }
+</script>

@@ -2,6 +2,7 @@
 using MyFinance.Models.Util;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace MyFinance.Models
     {
         public int Id { get;set; }
         public string Nome { get; set; }
+        [Range(10,99999.9)]
         public double Saldo { get; set; }
         public int Usuario_Id { get; set; }
 
