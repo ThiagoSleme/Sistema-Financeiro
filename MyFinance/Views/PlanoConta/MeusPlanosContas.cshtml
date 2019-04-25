@@ -1,0 +1,41 @@
+﻿@model PlanoContaModel
+@{
+    ViewData["Title"] = "MeusPlanosContas";
+}
+
+
+
+<h2>Plano de Cotas</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>            
+            <td>#</td>
+            <td>ID</td>
+            <td>Descrição</td>
+            <td>Tipo</td>
+        </tr>
+    </thead>
+    @{
+        foreach (var item in (List<PlanoContaModel>)ViewBag.ListaPlanoConta)
+        {
+            <tbody>
+                <tr>
+                    <td><button type="button" class="btn btn-danger" onclick="Excluir(@item.Id.ToString())">Excluir</button></td>
+                    <td>@item.Id.ToString()</td>
+                    <td>@item.Descracao.ToString()</td>
+                    <td>@item.Tipo.ToString().Replace("R","Receita").Replace("D", "Despesa")</td>
+                </tr>
+            </tbody>
+        }
+    }
+</table>
+<button type="button" class="btn btn-block btn-success" onclick="PlanoContaReg()">Cadastrar Plano de Conta</button>
+<script>
+    function PlanoContaReg() {
+        window.location.href = '../PlanoConta/CadPlanConta';
+    }
+    function Excluir(id_conta) {
+        window.location.href = '../PlanoConta/ExcluirPlanoConta/' + id_conta;
+    }
+</script>
