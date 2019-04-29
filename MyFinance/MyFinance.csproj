@@ -12,10 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Transacao\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Update="Views\Shared\_Layout_Login.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>

@@ -38,7 +38,8 @@ namespace MyFinance.Controllers
                 if (id == 0)
                 {
                     HttpContext.Session.SetString("NomeUsuarioLogado", string.Empty);
-                    HttpContext.Session.SetString("IdUsuarioLogado", string.Empty);                    
+                    HttpContext.Session.SetString("IdUsuarioLogado", string.Empty);
+                    
                 }
             }
             return View();

@@ -17,7 +17,7 @@
     </environment>
     <style>
         body{
-            background-image:url(../../wwwroot/images/);
+            background-image:url('../../images/Login.jpg');
             background-repeat:no-repeat;
         }
     </style>
@@ -25,12 +25,13 @@
 <body>  
     <partial name="_CookieConsentPartial" />
 
-    <div class="container body-content" style="padding-top:25px">
+    <div class="container body-content" style="padding-top:100px">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2019 - Systema Financeiro</p>
-        </footer>
+        <!--
+    <hr />
+    <footer>
+        <p style="color:aliceblue">&copy; 2019 - Systema Financeiro</p>
+    </footer>-->
     </div>
 
     <environment include="Development">

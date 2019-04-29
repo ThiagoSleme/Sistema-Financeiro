@@ -18,8 +18,11 @@
         foreach (var item in (List<ContaModel>)ViewBag.ListaConta)
         {
             <tbody>
-                <tr>                    
-                    <td><button type="button" class="btn btn-danger" onclick="Excluir(@item.Id.ToString())">Excluir</button></td>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-danger" onclick="Excluir(@item.Id.ToString())">Excluir</button> |
+                        <button type="button" class="btn btn-primary">Alterar</button>
+                    </td>                    
                     <td>@item.Id.ToString()</td>
                     <td>@item.Nome.ToString()</td>
                     <td>R$ @item.Saldo.ToString()</td>

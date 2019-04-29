@@ -21,7 +21,10 @@
         {
             <tbody>
                 <tr>
-                    <td><button type="button" class="btn btn-danger" onclick="Excluir(@item.Id.ToString())">Excluir</button></td>
+                    <td>
+                        <button type="button" class="btn btn-danger" onclick="Excluir(@item.Id.ToString())">Excluir</button> |
+                        <button type="button" class="btn btn-primary" onclick="Editar(@item.Id.ToString())">Alterar</button>
+                    </td>
                     <td>@item.Id.ToString()</td>
                     <td>@item.Descracao.ToString()</td>
                     <td>@item.Tipo.ToString().Replace("R","Receita").Replace("D", "Despesa")</td>
@@ -37,5 +40,8 @@
     }
     function Excluir(id_conta) {
         window.location.href = '../PlanoConta/ExcluirPlanoConta/' + id_conta;
+    }
+    function Editar(id_conta) {
+        window.location.href = '../PlanoConta/EdiatrPlanoConta/' + id_conta;
     }
 </script>
